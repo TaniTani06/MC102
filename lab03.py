@@ -7,110 +7,36 @@
 
 # leitura de dados
 
-day = int(input())
+day = int(input()) - 1
 time = int(input())
 min = int(input())
 s = input()
 c = input()
-price = 0
-
-if(c== "D"):
-    c= False
 
 # valor do ingresso inteiro
-if(time>18):
-    if(day==1 or day==4 or day==5):
-        price = 30
+preco_vespertino = [30,15,15,15,20,20,30]
+preco_noturno = [30,20,20,30,30,40,40]
+desconto_vespertino = [0.7,0.5,0.5,0.5,0.5,0.5,0.8]
+desconto_noturno = [0.7,0.5,0.5,0.5,0.5,0.7,0.8]
+
+#checar horário
+if((time==18 and min<30) or (time<18)):
+    ingresso = preco_vespertino[day]
     
-    if(day==2 or day==3):
-        price = 20
-    
-    if(day==6 or day==7):
-        price = 40
+    if(s=="S"):
+        ingresso = ingresso/2
+    else:
+        if(c=="C"):
+            ingresso = preco_vespertino[day]*desconto_vespertino[day]
 
-if(time<18):
-    if(day==1 or day==7):
-        price = 30
-    
-    if(day==2 or day==3 or day==4):
-        price = 15
-    
-    if(day==5 or day==6):
-        price = 20
+if((time==18 and min>=30) or (time>18)):
+    ingresso = preco_noturno[day]
 
-if(time==18):
-    if(min<30):
-        if(day==1 or day==7):
-            price = 30
-        
-        if(day==2 or day==3 or day==4):
-            price = 15
-        
-        if(day==5 or day==6):
-            price = 20
-
-    if(min>=30):
-        if(day==1 or day==4 or day==5):
-            price = 30
-    
-        if(day==2 or day==3):
-            price = 20
-    
-        if(day==6 or day==7):
-            price = 40
-
-
-
-
-# valor a pagar
-if(s=="S"):
-    price = price/2
-
-else:
-    if(c=="C"):
-        if(time>18):
-            if(day==1 or day==6):
-                price = price*0.7
-            
-            if(day==2 or day==3 or day==4 or day==5):
-                price = price*0.5
-
-            if(day==7):
-                price = price*0.8
-        
-        if(time<18):
-            if(day==1):
-                price = price*0.7
-            
-            if(day==2 or day==3 or day==4 or day==5 or day==6):
-                price = price*0.5
-
-            if(day==7):
-                price = price*0.8
-        
-        if(time==18):
-            if(min<30):
-                if(day==1):
-                    price = price*0.7
-            
-                if(day==2 or day==3 or day==4 or day==5 or day==6):
-                    price = price*0.5
-
-                if(day==7):
-                    price = price*0.8
-
-            if(min>=30):
-                if(day==1 or day==6):
-                    price = price*0.7
-            
-                if(day==2 or day==3 or day==4 or day==5):
-                    price = price*0.5
-
-                if(day==7):
-                    price = price*0.8
-
-ingresso = price
-
+    if(s=="S"):
+        ingresso = ingresso/2
+    else:
+        if(c=="C"):
+            ingresso = preco_noturno[day]*desconto_noturno[day]
 
 # saída do valor do ingresso
 print('Valor do ingresso: R$', format(ingresso, '.2f').replace('.', ','))
