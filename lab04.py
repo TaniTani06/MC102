@@ -20,7 +20,7 @@ while x != 0:
             vendas = vendas + 1
         else:
             y=str(-x)
-            print("Quantidade indisponível para a venda de " + y + " unidades") 
+            print("Quantidade indisponível para a venda de " + y + " unidades.") 
     x = int(input())
 
 # impressão da saída
