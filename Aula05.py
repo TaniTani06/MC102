@@ -26,7 +26,9 @@ print("Abacaxi" in frutas)
 #True
 
 #append insere elementos no fim da lista
-#frutas.append("Limão")
+
+frutas.append("Limão")
+
 #insert insere em uma posição específico
 #frutas.insert(2,"Limão")
 #index verifica a posição do elemento na lista
