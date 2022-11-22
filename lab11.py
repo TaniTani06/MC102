@@ -1,8 +1,8 @@
 #####################################################
 # MC102 - Algoritmos e Programação de Computadores
 # Laboratório 11 - Encaixe 2D
-# Nome:
-# RA:
+# Nome: Gustavo Andrade Taniguchi
+# RA: 243651
 #####################################################
 encaixe_original = 0
 encaixe_90 = 0

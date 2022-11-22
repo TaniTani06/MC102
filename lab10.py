@@ -1,8 +1,8 @@
 #####################################################
 # MC102 - Algoritmos e Programação de Computadores
 # Laboratório 10 - Caça ao Tesouro
-# Nome:
-# RA:
+# Nome: Gustavo Andrade Taniguchi
+# RA: 243651
 #####################################################
 
 from copy import deepcopy
